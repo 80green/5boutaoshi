@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>パスワード保護</title>
+    <title>5年棒倒し</title>
     <style>
         /* 全体の背景画像とオーバーレイ設定 */
         body {
@@ -24,7 +24,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('https://github.com/username/repository-name/raw/main/assets/background.jpg') center center no-repeat; /* ここに画像URLを追加 */
+            background: url('https://example.com/your-image.jpg') center center no-repeat;
             background-size: cover;
             z-index: -1;
         }
@@ -81,7 +81,7 @@
 
         /* パスワード入力フォーム */
         input[type="password"] {
-            width: 100%;
+            width: calc(100% - 35px);
             padding: 12px;
             margin-bottom: 20px;
             border: 2px solid #ddd;
@@ -123,10 +123,10 @@
     <div class="background"></div> <!-- 背景画像 -->
     <div class="overlay"></div> <!-- オーバーレイ -->
     <div class="login-box">
-        <h2>パスワードを入力してください</h2>
+        <h2>第80代緑組 5年棒倒し</h2>
         <form id="passwordForm">
-            <input type="password" id="password" placeholder="パスワード" required>
-            <button type="submit">送信</button>
+            <input type="password" id="password" placeholder="Password here" required>
+            <button type="submit">Continue</button>
         </form>
         <div class="error" id="error-message"></div>
     </div>
@@ -142,7 +142,7 @@
             if (inputPassword === correctPassword) {
                 window.location.href = "https://boudoushi-guide-jpftsjb.gamma.site"; // Gammaサイトへのリダイレクト
             } else {
-                errorMessage.textContent = "パスワードが違います。もう一度試してください。";
+                errorMessage.textContent = "The provided password was not accepted";
             }
         });
     </script>
