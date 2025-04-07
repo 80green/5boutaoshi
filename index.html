@@ -126,6 +126,27 @@
       color: red;
       margin-top: 10px;
     }
+    .password-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.password-container input[type="password"],
+.password-container input[type="text"] {
+  padding-right: 40px;
+  width: 100%;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 18px;
+  color: #1f7135;
+}
   </style>
 </head>
 <body>
@@ -139,7 +160,12 @@
   <div class="login-box">
     <h2>Enter the password here</h2>
     <form id="passwordForm">
-      <input type="password" id="password" placeholder="This page is protected" required />
+      <div class="password-container">
+  <input type="password" id="password" placeholder="This page is protected" required />
+  <span class="toggle-password" onclick="togglePasswordVisibility()">
+    👁️
+  </span>
+</div>
       <button type="submit">Continue</button>
     </form>
     <div class="error" id="error-message"></div>
@@ -160,5 +186,18 @@
       }
     });
   </script>
+  <script>
+  function togglePasswordVisibility() {
+    const input = document.getElementById("password");
+    const icon = document.querySelector(".toggle-password");
+    if (input.type === "password") {
+      input.type = "text";
+      icon.textContent = "🙈";
+    } else {
+      input.type = "password";
+      icon.textContent = "👁️";
+    }
+  }
+</script>
 </body>
 </html>
